@@ -15,12 +15,12 @@ def get_students(student):
 
 def search_by_lastname(students, last_name):
     results = [
-        (sid, info) for sid, info in students.items()
+        (student, info) for student, info in students.items()
         if info[0].lower() == last_name.lower()
     ]
     if results:
-        for sid, info in results:
-            print(f"ID: {sid}, Last Name: {info[0]}, First Name: {info[1]}, Major: {info[2]}, GPA: {info[3]}")
+        for student, info in results:
+            print(f"ID: {student}, Last Name: {info[0]}, First Name: {info[1]}, Major: {info[2]}, GPA: {info[3]}")
     else:
         print("No student found with that last name.")
 
@@ -28,12 +28,12 @@ def search_by_lastname(students, last_name):
 def search_by_major(students, major):
     """Find and print students by major."""
     results = [
-        (sid, info) for sid, info in students.items()
+        (student, info) for student, info in students.items()
         if info[2].lower() == major.lower()
     ]
     if results:
-        for sid, info in results:
-            print(f"ID: {sid}, Last Name: {info[0]}, First Name: {info[1]}, Major: {info[2]}, GPA: {info[3]}")
+        for student, info in results:
+            print(f"ID: {student}, Last Name: {info[0]}, First Name: {info[1]}, Major: {info[2]}, GPA: {info[3]}")
     else:
         print("No student found with that major.")
 
@@ -64,3 +64,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
